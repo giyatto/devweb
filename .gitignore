@@ -1,0 +1,17 @@
+.metadata
+
+.settings
+
+/tomcat.*
+
+/target
+
+.project
+
+.classpath
+
+*.class
+
+*.jar
+
+/bin
