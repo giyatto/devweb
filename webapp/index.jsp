@@ -22,7 +22,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-		       	메인 페이지 
+		       	수정된 메인 페이지 
 			</div>
 		</div>
 	</div>
