@@ -5,6 +5,8 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
     </encoder>
   </appender>
+  
+  <logger name="org.nhn.next.user" level="info"/>
 
   <root level="debug">
     <appender-ref ref="STDOUT" />

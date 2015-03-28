@@ -27,9 +27,7 @@ public class LoginServlet extends AbstractHttpServlet {
 		String password = req.getParameter("password");
 		String url = "/login.jsp";
 		
-		logger.debug("ID :" + userId + " / password : " + password);
-		//System.out.println("ID :" + userId + " / password : " + password);
-		
+		logger.debug("ID : {} / password : {}", userId, password);		
 		
 		try {
 			try {

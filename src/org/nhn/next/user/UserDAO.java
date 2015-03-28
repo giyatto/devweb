@@ -6,32 +6,32 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class UserDAO {
 
-	public Connection getConnection(){
+	static final Logger logger = LoggerFactory.getLogger(UserDAO.class);
 
+	public Connection getConnection(){
 		String url = "jdbc:mysql://localhost:3306/giyatto_db";
 		String id = "giyatto"; 
 		String pw = "aa";
-		
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 		
 			return DriverManager.getConnection(url,id,pw);
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			logger.debug(e.getMessage());
 			return null;
 		}
     }
-
+ 
 	public void addUser(User user) throws SQLException {
 
 		String sql = "insert into USERS values(?,?,?,?)";
-		
 		Connection conn = null;
-		
 		PreparedStatement pstmt=null;
-		
 		try{
 			conn = getConnection();
 			
@@ -40,9 +40,7 @@ public class UserDAO {
 			pstmt.setString(2,user.getPassword());
 			pstmt.setString(3,user.getName());
 			pstmt.setString(4,user.getEmail());
-			
 			pstmt.executeUpdate();
-			
 		} finally{
 			if(pstmt != null){
 				pstmt.close();
@@ -57,34 +55,25 @@ public class UserDAO {
 	public User findByUserId(String userId) throws SQLException {
 		
 		String sql = "select * from USERS where userId= ?";
-		
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		
 		try{
 			conn = getConnection();
 			pstmt =  getConnection().prepareStatement(sql); 
 			pstmt.setString(1,  userId);
-			
 			rs = pstmt.executeQuery();	// 데이터를 꺼내와야 되기 때문에.
-			
 			if(!rs.next()){
 				return null;
 			}
-			
-			//System.out.println("findByUserId : " + rs.getString("userId") + " + " + rs.getString("password") + " + " + rs.getString("name") + " + " + rs.getString("email"));
-			
-			
-			
+			logger.debug("findByUserId : {} + {} + {} + {}", rs.getString("userId"), rs.getString("password"), rs.getString("name"), rs.getString("email"));
+
 			return new User(
 					rs.getString("userId"), 
 					rs.getString("password"), 
 					rs.getString("name"), 
 					rs.getString("email"));
-			
 		} finally{
-			
 			if(rs!=null){
 				rs.close();
 			}
@@ -95,24 +84,19 @@ public class UserDAO {
 				conn.close();
 			}
 		}
-		
     }
 
 	public void removeUser(String userId) throws SQLException {
 		
 		String sql = "delete from USERS where userId = ?";
-		
 		Connection conn = null;
-		
 		PreparedStatement pstmt=null;
-		
 		try{
 			conn = getConnection();
 			pstmt =  getConnection().prepareStatement(sql); 
 			pstmt.setString(1,userId);
 	
 			pstmt.executeUpdate();
-			
 		} finally{
 			if(pstmt != null){
 				pstmt.close();
@@ -121,18 +105,12 @@ public class UserDAO {
 				conn.close();
 			}
 		}
-				
     }
 
 	public void updateUser(User user) throws SQLException {
-	
-		
 		String sql = "update USERS set password = ?, name = ?, email = ? where userId = ?";
-		
 		Connection conn = null;
-		
 		PreparedStatement pstmt=null;
-		
 		try{
 			conn = getConnection();
 			pstmt =  getConnection().prepareStatement(sql); 
@@ -140,9 +118,7 @@ public class UserDAO {
 			pstmt.setString(2,user.getName());
 			pstmt.setString(3,user.getEmail());
 			pstmt.setString(4,user.getUserId());
-	
 			pstmt.executeUpdate();
-			
 		} finally{
 			if(pstmt != null){
 				pstmt.close();
@@ -152,5 +128,4 @@ public class UserDAO {
 			}
 		}
     }
-
 }
