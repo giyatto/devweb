@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.nhn.next.AbstractHttpServlet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @WebServlet("/users/login")
 public class LoginServlet extends AbstractHttpServlet {
 	
 	public static final String SESSION_USER_ID = "userId";
+	static final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -24,7 +27,7 @@ public class LoginServlet extends AbstractHttpServlet {
 		String password = req.getParameter("password");
 		String url = "/login.jsp";
 		
-		
+		logger.debug("ID :" + userId + " / password : " + password);
 		//System.out.println("ID :" + userId + " / password : " + password);
 		
 		
