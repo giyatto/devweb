@@ -29,7 +29,7 @@ public class UserTest {
 	@Test
 	public void login() throws Exception {
 		User user = UserTest.TEST_USER;
-		userDAO.insert(user);
+		userDAO.addUser(user);
 		User.login(TEST_USER.getUserId(), TEST_USER.getPassword());
 	}
 	@Test(expected=UsersNotFoundException.class)
@@ -42,7 +42,7 @@ public class UserTest {
 		User user = UserTest.TEST_USER;
 		
 		UserDAO userDAO = new UserDAO();
-		userDAO.insert(user);
+		userDAO.addUser(user);
 		
 		User.login(TEST_USER.getUserId(), "password2");
 	}

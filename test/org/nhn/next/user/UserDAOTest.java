@@ -22,7 +22,7 @@ public class UserDAOTest {
 	public void crud() throws Exception{
 		User user = UserTest.TEST_USER;
 		userDao.removeUser(user.getUserId());
-		userDao.insert(UserTest.TEST_USER);
+		userDao.addUser(UserTest.TEST_USER);
 		
 		User dbUser = userDao.findByUserId(user.getUserId());
 		assertEquals(user, dbUser);
