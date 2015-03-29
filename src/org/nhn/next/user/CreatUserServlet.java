@@ -40,7 +40,7 @@ public class CreatUserServlet extends HttpServlet {
 		
 		UserDAO userDAO = new UserDAO();
 		try {
-	        userDAO.addUser(user);
+	        userDAO.insert(user);
         } catch (SQLException e) {
 	        e.printStackTrace();
         }
