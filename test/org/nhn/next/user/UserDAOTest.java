@@ -1,7 +1,8 @@
 package org.nhn.next.user;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
+import static org.junit.Assert.*;
+
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -42,5 +43,12 @@ public class UserDAOTest {
 		User dbUser = userDao.findByUserId(user.getUserId());
 		assertNull(dbUser);
 	}
+	
+	@Test
+    public void findUsers() throws Exception {
+		List<User> users = userDao.findUsers();
+		assertTrue(users.size()>0);
+		
+    }
 	
 }

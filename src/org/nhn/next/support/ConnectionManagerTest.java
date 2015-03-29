@@ -1,6 +1,6 @@
 package org.nhn.next.support;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
 
