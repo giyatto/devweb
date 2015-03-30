@@ -1,7 +1,6 @@
 package org.nhn.next.user;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,13 +37,8 @@ public class UpdateUserServlet extends HttpServlet {
 		
 		User user = new User(userId, password, name, email);
 		UserDAO userDAO = new UserDAO();
-		try {
 	        userDAO.updateUser(user);
-        } catch (SQLException e) {
-        }
 		
 		resp.sendRedirect("/");
-		
-	
 	}
 }

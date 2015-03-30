@@ -5,6 +5,7 @@ import static org.junit.Assert.assertNotNull;
 import java.sql.Connection;
 
 import org.junit.Test;
+import org.nhn.next.jdbc.ConnectionManager;
 
 public class ConnectionManagerTest {
 

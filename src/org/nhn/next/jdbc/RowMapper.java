@@ -1,4 +1,4 @@
-package org.nhn.next.support;
+package org.nhn.next.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

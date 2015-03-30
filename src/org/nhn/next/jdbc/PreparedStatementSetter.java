@@ -1,4 +1,4 @@
-package org.nhn.next.support;
+package org.nhn.next.jdbc;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
