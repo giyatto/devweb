@@ -1,4 +1,4 @@
-package org.nhn.next.user;
+package org.nhn.next.web;
 
 import java.io.IOException;
 
@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.nhn.next.user.User;
+import org.nhn.next.user.UserDAO;
+
+import core.SessionUtils;
 
 @WebServlet("/users/update")
 public class UpdateUserServlet extends HttpServlet {

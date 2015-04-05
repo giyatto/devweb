@@ -1,11 +1,12 @@
-package org.nhn.next.support;
+package core;
 
 import static org.junit.Assert.assertNotNull;
 
 import java.sql.Connection;
 
 import org.junit.Test;
-import org.nhn.next.jdbc.ConnectionManager;
+
+import core.jdbc.ConnectionManager;
 
 public class ConnectionManagerTest {
 

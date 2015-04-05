@@ -6,9 +6,9 @@ import org.apache.catalina.startup.Tomcat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class WebApp {
+public class WebServerLauncher {
 
-	static final Logger logger = LoggerFactory.getLogger(WebApp.class);
+	static final Logger logger = LoggerFactory.getLogger(WebServerLauncher.class);
 	
 	public static void main(String[] args) throws Exception {
 

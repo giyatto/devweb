@@ -1,4 +1,4 @@
-package org.nhn.next.user;
+package org.nhn.next.web;
 
 import java.io.IOException;
 import java.util.Set;
@@ -12,7 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 
-import org.nhn.next.support.MyValidatorFactory;
+import org.nhn.next.user.User;
+import org.nhn.next.user.UserDAO;
+
+import core.MyValidatorFactory;
 
 @WebServlet("/users/create")
 public class CreatUserServlet extends HttpServlet {

@@ -1,4 +1,4 @@
-package org.nhn.next.user;
+package org.nhn.next.web;
 
 import java.io.IOException;
 

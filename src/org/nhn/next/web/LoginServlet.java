@@ -1,4 +1,4 @@
-package org.nhn.next.user;
+package org.nhn.next.web;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.nhn.next.AbstractHttpServlet;
+import org.nhn.next.user.PasswordEmptyException;
+import org.nhn.next.user.PasswordMismatchException;
+import org.nhn.next.user.User;
+import org.nhn.next.user.UserEmptyException;
+import org.nhn.next.user.UsersNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

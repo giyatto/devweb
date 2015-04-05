@@ -1,6 +1,8 @@
-package org.nhn.next.user;
+package core;
 
 import javax.servlet.http.HttpSession;
+
+import org.nhn.next.web.LoginServlet;
 
 public class SessionUtils {
 	

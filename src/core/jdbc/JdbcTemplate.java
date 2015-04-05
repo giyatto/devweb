@@ -1,4 +1,4 @@
-package org.nhn.next.jdbc;
+package core.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

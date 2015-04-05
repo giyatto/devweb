@@ -1,4 +1,4 @@
-package org.nhn.next.support;
+package core;
 
 import javax.validation.Validation;
 import javax.validation.Validator;

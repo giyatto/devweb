@@ -1,4 +1,4 @@
-package org.nhn.next.user;
+package org.nhn.next.web;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +8,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.nhn.next.user.User;
+import org.nhn.next.user.UserDAO;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
