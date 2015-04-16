@@ -1,5 +1,8 @@
 package org.nhn.next.di;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class MessageRenderer {
 	
 	private MessageProvider messageProvider;
@@ -13,12 +16,9 @@ public class MessageRenderer {
 	}
 	
 	public static void main(String[] args){
-		MessageRenderer render = new MessageRenderer();
+		ApplicationContext ac = new ClassPathXmlApplicationContext("di.xml");
+		MessageRenderer renderer = (MessageRenderer) ac.getBean("messageRenderer");
+		renderer.render();
 		
-		render.setMessageProvider(new HelloWorldMessageProvider());
-		render.render();
-		
-		render.setMessageProvider(new HiWorldMessageProvider());
-		render.render();
 	}
 }
