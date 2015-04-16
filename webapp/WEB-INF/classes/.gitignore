@@ -1,2 +1,4 @@
-/org/
 /core/
+/logback.xml
+/main/
+/org/
